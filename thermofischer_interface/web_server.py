@@ -80,18 +80,18 @@ class Server:
         if not isinstance(response, dict):
             return stack_light_mode
 
-        items = response.get("items", [])
-        if not isinstance(items, list):
+        bins = response.get("bins", [])
+        if not isinstance(bins, list):
             return stack_light_mode
         
-        if len(items) == 0:
+        if len(bins) == 0:
             return stack_light_mode
         
-        first_item = items[0]
-        if not isinstance(first_item, dict):
+        first_bin = bins[0]
+        if not isinstance(first_bin, dict):
             return stack_light_mode
 
-        item_state = first_item.get("extra_schema", {}).get("device_status", None)
+        item_state = first_bin.get("extra_schema", {}).get("device_status", None)
         if item_state is None:
             return stack_light_mode
 

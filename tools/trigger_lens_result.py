@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-example = json.load(open("tools/lens-executions-mock.json"))
+example = json.load(open("lens-executions-mock.json"))
 
 
 def trigger_lens_result():
