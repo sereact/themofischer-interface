@@ -1,0 +1,183 @@
+{
+  "_id": "67d7f633afbe0a9ce09cc66b",
+  "response": {
+    "items": [
+      {
+        "bounding_box": [
+          687,
+          363,
+          785,
+          558
+        ],
+        "segmentation": {
+          "size": [
+            900,
+            1350
+          ],
+          "counts": "\\Vlb07ak0R1WO8J7H9H5J6K6J6J4M4K8H4M3L4L5K3M3N2M3N1O2N001N3N2N1O1N101O1N2O2M2O1N2O1O002M4M2N2N3M5K2N2N5K3M3M2N2N3M001O000000000000000001O00001O00001O001O1O001O1O1O2N1O1O1O1O3M2M3N3M3L5L4J9G8H5K8bNUXOmM]h0g1V1J7H<B;G7H\\X_?"
+        },
+        "confidence": 0.9992873072624207,
+        "classes": null,
+        "matching_result": null,
+        "description": "a white temperature data logger with a digital display showing \"32.9°C\". It has two buttons, one green labeled \"Start\" and another red labeled \"Stop\". The brand name \"TempTender\" is printed above the buttons.",
+        "bounding_box_3d": {
+          "location": [
+            0.00441974954277819,
+            -0.016512180167602104,
+            1.2251423083430495
+          ],
+          "rotation": [
+            0.1554095768688294,
+            -0.9862657539091124,
+            -0.05592607695468683,
+            0.9859657421961148,
+            0.15835952724984723,
+            -0.05285655441730545,
+            0.06098703659890457,
+            -0.04692678121600713,
+            0.9970348331786554
+          ],
+          "extent": [
+            0.10657488684262524,
+            0.04873819063427369,
+            0.015130635421623533
+          ],
+          "cornerpoints": [
+            [
+              0.020595873213770814,
+              -0.0725109756568926,
+              1.2154931430034883
+            ],
+            [
+              0.03715863128282658,
+              0.032568211748363336,
+              1.2219928295278837
+            ],
+            [
+              -0.02747293511630717,
+              -0.06479281882903609,
+              1.2132060165947298
+            ],
+            [
+              0.019749676132807786,
+              -0.07331072891142407,
+              1.2305789135669738
+            ],
+            [
+              -0.011756374128214436,
+              0.039486615321688394,
+              1.2347914736826107
+            ],
+            [
+              -0.028319132197270197,
+              -0.06559257208356756,
+              1.2282917871582153
+            ],
+            [
+              0.036312434201863544,
+              0.031768458493831885,
+              1.2370786000913692
+            ],
+            [
+              -0.010910177047251408,
+              0.040286368576219846,
+              1.2197057031191252
+            ]
+          ]
+        },
+        "extra_schema": {
+          "device_status_": "NOT ON"
+        },
+        "overflown": false
+      }
+    ],
+    "bins": [
+      {
+        "bounding_box": null,
+        "segmentation": null,
+        "confidence": null,
+        "bounding_box_3d": null,
+        "description": "A white digital tachometer with a gray sensor probe is lying at the center of a gray plastic bin. The device has a small LCD display showing \"29.1\" and two buttons labeled \"TEST\" and \"MEM\". The brand name \"Temtop\" is printed below the display. The device appears to be intact and clean.",
+        "extra_schema": {
+          "is_empty": false
+        },
+        "dimensions": null,
+        "z_distance": null,
+        "bin_detection_enable": false,
+        "metadata": null,
+        "overflown": false,
+        "is_empty": false
+      }
+    ],
+    "text_response": {
+      "response": "yes",
+      "usage": null,
+      "logprobs": null
+    },
+    "timing": {
+      "upstream_latency": 0.234592,
+      "downstream_latency": 0.079774,
+      "processing_time": 1.886933
+    },
+    "response_id": "a2cae4eb-2675-4b2c-891c-58e1c4453f7d",
+    "metadata": {}
+  },
+  "setting": {
+    "_id": "67d7f273afbe0a9ce09cc666",
+    "setting_name": "setting_13",
+    "trigger_type": "external",
+    "scanners": [],
+    "area": "crop_1",
+    "prompt": "Do you see an electrical device?",
+    "area_fields": [
+      {
+        "name": "is_empty",
+        "type": "boolean",
+        "description": "Is the bin empty?"
+      }
+    ],
+    "object_fields": [
+      {
+        "name": "device_status",
+        "type": "string",
+        "description": "Is the item ON, NOT ON, or UNDEFINED(if you don't see its top side?)"
+      }
+    ],
+    "webhooks": []
+  },
+  "metadata": {},
+  "barcode": "",
+  "camera_info": {
+    "cam_pose": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "intrinsics": [
+      2272.760009765625,
+      0,
+      731.904052734375,
+      0,
+      2268.9140625,
+      493.21826171875,
+      0,
+      0,
+      1
+    ]
+  },
+  "timestamp": "2025-03-17T10:15:15.019968+00:00",
+  "images": [
+    {
+      "path": "/home/sereact-mathias/.sereact/image_database/b81e9644-0318-11f0-8c35-ff0de0fe33d8_rgb.png",
+      "type": "rgb"
+    },
+    {
+      "path": "/home/sereact-mathias/.sereact/image_database/b81e9645-0318-11f0-8c35-ff0de0fe33d8_depth.tiff",
+      "type": "depth"
+    }
+  ]
+}
