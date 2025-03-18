@@ -4,7 +4,6 @@ import enum
 import uuid
 import time
 from datetime import datetime, timezone
-from sereact_custom_messaging.msg import EventMsg
 from thermofischer_interface.logger import SereactLogger
 logger = SereactLogger(__name__)
 
@@ -58,12 +57,6 @@ def generate_timestamp() -> str:
     """
     return datetime.now(tz=timezone.utc).isoformat()
     
-def send_event(title, message, level) -> EventMsg:
-    event = EventMsg()
-    event.title = title
-    event.message = message
-    event.level = level
-    event.timestamp = generate_timestamp()
 
 def log_event(logger, level, message):
     if level == "info":

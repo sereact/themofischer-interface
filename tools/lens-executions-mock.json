@@ -61,9 +61,6 @@
             [
               0.019749676132807786,
               -0.07331072891142407,
-              1.2305789135669738
-            ],
-            [
               -0.011756374128214436,
               0.039486615321688394,
               1.2347914736826107
@@ -86,7 +83,7 @@
           ]
         },
         "extra_schema": {
-          "device_status_": "NOT ON"
+          "is_blue": "yes"
         },
         "overflown": false
       }
@@ -99,7 +96,7 @@
         "bounding_box_3d": null,
         "description": "A white digital tachometer with a gray sensor probe is lying at the center of a gray plastic bin. The device has a small LCD display showing \"29.1\" and two buttons labeled \"TEST\" and \"MEM\". The brand name \"Temtop\" is printed below the display. The device appears to be intact and clean.",
         "extra_schema": {
-          "is_empty": false
+          "device_status": "ON"
         },
         "dimensions": null,
         "z_distance": null,

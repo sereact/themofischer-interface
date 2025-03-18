@@ -8,7 +8,6 @@ from multiprocessing import Process, Queue
 import colorlog
 import rclpy
 from rclpy.node import Node
-from sereact_custom_messaging.msg import SereactLog
 from std_msgs.msg import String
 
 import rclpy
@@ -35,56 +34,6 @@ def get_uuid():
 
 
 
-
-
-class RosLogPublisher(Node):
-    def __init__(self, queue) -> None:
-        super().__init__("logger_"+ get_uuid().replace("-", ""))
-        self.queue = queue
-        self.sereact_log_publisher = self.create_publisher(SereactLog, "/sereact_log", volatile_qos)
-        self.plain_log_publisher = self.create_publisher(String, "/string_log", volatile_qos)
-
-    def publish_message(self, record):
-        msg = SereactLog()
-        msg.level = record.levelname
-        if not isinstance(record.msg, str):
-            record.msg = str(record.msg)
-        msg.message = record.msg
-        msg.timestamp = datetime.datetime.now().isoformat()
-        msg.module = record.name
-        msg.filename = record.filename
-        self.sereact_log_publisher.publish(msg)
-        self.plain_log_publisher.publish(String(data=f"{msg.timestamp} | {msg.level} | {msg.module} | {msg.message}"))
-
-    def run(self):
-        while True:
-            try:
-                record = self.queue.get()
-                self.publish_message(record)
-            except Exception as e:
-                print(e)
-
-def logging_process(queue):
-    safe_init()
-    pub = RosLogPublisher(queue)
-    pub.run()
-
-class RosLogHandler(logging.Handler):
-
-    def __init__(self, level=...) -> None:
-        logging.Handler.__init__(self)
-        self.queue = Queue(maxsize=100)
-        self.process = Process(target=logging_process, args=(self.queue,), daemon=True)
-        self.process.start()
-
-    def emit(self, record: LogRecord) -> None:
-        try:
-            if not isinstance(record.msg, str):
-                record.msg = str(record.msg)
-            self.queue.put(record, block=False)
-        except Exception as e:
-            print(e)
-            pass
 
 
 class SereactLogger(logging.Logger):

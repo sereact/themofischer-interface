@@ -6,10 +6,8 @@ from thermofischer_interface.image_utils import image_to_base64, base64_to_image
 from thermofischer_interface.utils import generate_timestamp
 from std_msgs.msg import Bool, Int32, String
 from sensor_msgs.msg import Image
-from sereact_custom_messaging.msg import SereactErrorCode
 import datetime
 
-from thermofischer_interface.system_state_monitor import SystemStateMonitorClient 
 from thermofischer_interface.utils import StackLightMode
 from thermofischer_interface.states import SystemState
 from thermofischer_interface.logger import SereactLogger
@@ -25,6 +23,7 @@ class ThermoFischerStacklightMode(enum.Enum):
     ON= 1
     NOT_ON=2
     UNKNOWN= 3
+    OFF= 8
 
 class AsyncRosClient(Node):
     

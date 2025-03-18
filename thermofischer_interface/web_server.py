@@ -109,7 +109,14 @@ class Server:
         await self.ros_client.set_stack_light(stack_light_mode)
         logger.info(data)
         
+        self.loop.create_task(self.delayed_light_off())
+        
         return web.json_response({})
+    
+    async def delayed_light_off(self):
+        """Turn off the light after 3 seconds"""
+        await asyncio.sleep(3)
+        await self.ros_client.set_stack_light(ThermoFischerStacklightMode.OFF)
 
     def main(self):
         runner = aiohttp.web.AppRunner(self.app)
