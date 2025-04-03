@@ -1,2 +1,2 @@
-source /thermofischer_interface/colcon_ws/install/setup.bash
+source /opt/ros/humble/setup.bash
 python3 run_services/run.py

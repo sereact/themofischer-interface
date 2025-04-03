@@ -1,0 +1,9 @@
+services:
+  thermofischer-interface:
+    restart: always
+    network_mode: host
+    image: thermofischer-interface
+    command: ["/run_services/run.sh"]
+  
+    volumes:
+      - /dev/shm:/dev/shm
