@@ -95,9 +95,9 @@ class Server:
         if item_state is None:
             return stack_light_mode
 
-        if item_state == "ON":
+        if item_state == "on":
             stack_light_mode = ThermoFischerStacklightMode.ON
-        elif item_state == "NOT ON":
+        elif item_state == "off":
             stack_light_mode = ThermoFischerStacklightMode.NOT_ON
         return stack_light_mode
 
