@@ -1,4 +1,3 @@
-
 FROM osrf/ros:humble-desktop-full
 
 # Install necessary dependencies for Python and ROS2
@@ -41,14 +40,6 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 USER sereact
 USER root
-
-WORKDIR /thermofischer_interface/colcon_ws
-COPY ./colcon_ws/src /thermofischer_interface/colcon_ws/src
-# Install ROS2 dependencies
-RUN rosdep install --from-paths src --ignore-src -r -y
-
-# Build the ROS2 package in colcon_ws
-RUN ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && colcon build"]
 
 WORKDIR /
 COPY ./run_services /run_services

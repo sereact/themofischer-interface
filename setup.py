@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 import codecs
-
 import os
 
 def read(rel_path):
@@ -19,10 +18,6 @@ def get_version(rel_path):
 setup(
     name="thermorfischer_interface",
     install_requires=[
-        "pymongo",
-        "msgpack",
-        "pyzmq",
-        "pillow",
         "aiohttp",
         "aiohttp-cors",
         "requests",
@@ -30,12 +25,7 @@ setup(
         "motor",
         "numpy",
         "colorlog",
-        "cv_bridge",
-        "tqdm",
-        "pytest",
-        "pytest-xdist",
         "uvloop",
-        "flask"
             ],
     version=get_version("thermofischer_interface/__init__.py"),
     packages=find_packages(),
